@@ -51,14 +51,20 @@ namespace ShipmentTracker
         /// <summary>
         /// Количество
         /// </summary>
-        public int Count { get; set; }
+        private int _count = 1;
+
+        public int Count
+        {
+            get => _count;
+            set => _count = value;
+        }
 
         public override string ToString()
         {
             return string.Format("{0}, {1}", Title, Count);
         }
 
-        public Content Clone ()
+        public Content Clone()
         {
             return new Content { Title = Title, Count = Count };
         }
